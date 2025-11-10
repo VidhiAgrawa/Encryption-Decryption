@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Secret Link</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #0052cc;
+      --bg-color: #f8f9fa;
+      --card-bg: #ffffff;
+      --text-color: #212529;
+      --label-color: #495057;
+      --border-color: #dee2e6;
+      --link-bg: #f8f9fa;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    .container {
+      background: var(--card-bg);
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      width: 100%;
+      max-width: 550px;
+      border: 1px solid #e9ecef;
+      text-align: center;
+    }
+    h1 {
+      color: var(--text-color);
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+    p {
+      color: var(--label-color);
+      margin-bottom: 25px;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--label-color);
+      text-align: left;
+    }
+    .link-container {
+      position: relative;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      box-sizing: border-box;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      background: var(--link-bg);
+      color: var(--text-color);
+      cursor: pointer;
+    }
+    .copy-feedback {
+      display: none;
+      font-size: 12px;
+      color: var(--primary-color);
+      margin-top: 5px;
+      text-align: right;
+    }
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 500;
+      margin-top: 25px;
+      display: inline-block;
+      transition: color 0.2s;
+    }
+    a:hover {
+      color: #0041a3;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Your Secret Note is Saved!</h1>
+    <p>Share this link. They will need the password to open it.</p>
+    
+    <div>
+      <label for="noteUrl">Your unique link (click to copy):</label>
+      <div class="link-container">
+        <input type="text" id="noteUrl" value="<%= noteUrl %>" readonly>
+        <div id="copyFeedback" class="copy-feedback">Copied to clipboard!</div>
+      </div>
+    </div>
+
+    <a href="/">Create another note</a>
+  </div>
+
+  <script>
+    const noteUrlInput = document.getElementById('noteUrl');
+    const copyFeedback = document.getElementById('copyFeedback');
+
+    noteUrlInput.addEventListener('click', () => {
+      noteUrlInput.select();
+      noteUrlInput.setSelectionRange(0, 99999); // For mobile devices
+
+      // Use a modern clipboard API
+      navigator.clipboard.writeText(noteUrlInput.value).then(() => {
+        // Show feedback
+        copyFeedback.style.display = 'block';
+        setTimeout(() => {
+          copyFeedback.style.display = 'none';
+        }, 2000);
+      }).catch(err => {
+        console.warn('Failed to copy text with modern API: ', err);
+        // Fallback for older browsers or insecure contexts
+        try {
+          document.execCommand('copy');
+          copyFeedback.style.display = 'block';
+          setTimeout(() => {
+            copyFeedback.style.display = 'none';
+          }, 2000);
+        } catch (e) {
+          console.error('Fallback copy failed: ', e);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
