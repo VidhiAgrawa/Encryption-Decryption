@@ -113,21 +113,17 @@
   <script>
     const noteUrlInput = document.getElementById('noteUrl');
     const copyFeedback = document.getElementById('copyFeedback');
-
     noteUrlInput.addEventListener('click', () => {
       noteUrlInput.select();
-      noteUrlInput.setSelectionRange(0, 99999); // For mobile devices
+      noteUrlInput.setSelectionRange(0, 99999);
 
-      // Use a modern clipboard API
       navigator.clipboard.writeText(noteUrlInput.value).then(() => {
-        // Show feedback
         copyFeedback.style.display = 'block';
         setTimeout(() => {
           copyFeedback.style.display = 'none';
         }, 2000);
       }).catch(err => {
         console.warn('Failed to copy text with modern API: ', err);
-        // Fallback for older browsers or insecure contexts
         try {
           document.execCommand('copy');
           copyFeedback.style.display = 'block';
