@@ -39,27 +39,22 @@ Encryption-Decryption/<br>
 ---
 
 ### **Installation**<br>
-git clone https://github.com/VidhiAgrawa/Encryption-Decryption.git<br>
-cd Encryption-Decryption<br>
-npm install<br>
+- git clone https://github.com/VidhiAgrawa/Encryption-Decryption.git<br>
+- cd Encryption-Decryption<br>
+- npm install<br>
 
 ###Run the Application<br>
-npm start<br>
+- npm start<br>
 
 ###🧠 How It Works<br>
-
-The application separates logic into clear modules:<br>
-
-cryptoLogic.js → Handles all encryption and decryption functions<br>
-
-server.js → Runs the Node.js server and connects routes<br>
-
-views/ → Frontend pages for user input & result display<br>
-
-This structure makes it easy to expand with more algorithms, APIs, or UI upgrades.<br>
+- The application separates logic into clear modules:<br>
+- cryptoLogic.js → Handles all encryption and decryption functions<br>
+- server.js → Runs the Node.js server and connects routes<br>
+- views/ → Frontend pages for user input & result display<br>
+- This structure makes it easy to expand with more algorithms, APIs, or UI upgrades.<br>
 
 
 ###👩‍💻 Author<br>
 
-Vidhi Agrawal<br>
-GitHub: VidhiAgrawa<br>
+- Vidhi Agrawal<br>
+- GitHub: VidhiAgrawa<br>
