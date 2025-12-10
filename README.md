@@ -6,60 +6,60 @@ A simple and efficient Node.js-based application for encrypting and decrypting t
 
 ## 📌 Features
 
-- Encrypt text securely  
-- Decrypt encrypted text  
-- Clean and modular cryptographic logic (`cryptoLogic.js`)  
-- Simple frontend interface using views  
-- Node.js server setup for handling requests  
-- Easy to extend and customize  
+- Encrypt text securely  <br>
+- Decrypt encrypted text  <br>
+- Clean and modular cryptographic logic (`cryptoLogic.js`)  <br>
+- Simple frontend interface using views  <br>
+- Node.js server setup for handling requests  <br>
+- Easy to extend and customize  <br>
 
 ---
 
 ## 📁 Project Structure
 
-Encryption-Decryption/
+Encryption-Decryption/<br>
 │
-├── models/ # (Optional) models, if extended later
-├── views/ # UI templates (EJS/HTML)
-├── cryptoLogic.js # Core encryption & decryption functions
-├── server.js # App entry point
-├── .env # Environment variables (if required)
-├── package.json # Metadata & dependencies
-└── README.md # Documentation
+├── models/ # (Optional) models, if extended later<br>
+├── views/ # UI templates (EJS/HTML)<br>
+├── cryptoLogic.js # Core encryption & decryption functions<br>
+├── server.js # App entry point<br>
+├── .env # Environment variables (if required)<br>
+├── package.json # Metadata & dependencies<br>
+└── README.md # Documentation<br>
 
 
 ---
 
 ## 🚀 Getting Started
 
-### **Prerequisites**
-- Node.js (v14 or above)
-- npm or yarn package manager
+### **Prerequisites**<br>
+- Node.js (v14 or above)<br>
+- npm or yarn package manager<br>
 
 ---
 
-### **Installation**
-git clone https://github.com/VidhiAgrawa/Encryption-Decryption.git
-cd Encryption-Decryption
-npm install
+### **Installation**<br>
+git clone https://github.com/VidhiAgrawa/Encryption-Decryption.git<br>
+cd Encryption-Decryption<br>
+npm install<br>
 
-###Run the Application
-npm start
+###Run the Application<br>
+npm start<br>
 
-###🧠 How It Works
+###🧠 How It Works<br>
 
-The application separates logic into clear modules:
+The application separates logic into clear modules:<br>
 
-cryptoLogic.js → Handles all encryption and decryption functions
+cryptoLogic.js → Handles all encryption and decryption functions<br>
 
-server.js → Runs the Node.js server and connects routes
+server.js → Runs the Node.js server and connects routes<br>
 
-views/ → Frontend pages for user input & result display
+views/ → Frontend pages for user input & result display<br>
 
-This structure makes it easy to expand with more algorithms, APIs, or UI upgrades.
+This structure makes it easy to expand with more algorithms, APIs, or UI upgrades.<br>
 
 
-###👩‍💻 Author
+###👩‍💻 Author<br>
 
-Vidhi Agrawal
-GitHub: VidhiAgrawa
+Vidhi Agrawal<br>
+GitHub: VidhiAgrawa<br>
